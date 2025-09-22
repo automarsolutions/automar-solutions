@@ -5,96 +5,109 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Automar Solutions</title>
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-    }
-    header {
-      position: relative;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: #023e8a;
-      background: #f8f9fa;
-    }
-    header .overlay {
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: url("AUOTMAR SOLUTIONS.png") no-repeat center;
-      background-size: 60%;
-      opacity: 0.15;
-      z-index: 0;
-    }
-    header h1, header p, header a {
-      position: relative;
-      z-index: 1;
-    }
-    nav {
-      background: #023e8a;
-      color: #fff;
-      padding: 10px;
-      text-align: center;
-    }
-    nav a {
-      color: #fff;
-      margin: 0 15px;
-      text-decoration: none;
-    }
-    section {
-      padding: 50px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    footer {
-      background: #023e8a;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-    }
+    body { margin: 0; font-family: Arial, sans-serif; color: #333; background-color: #f9f9f9; }
+    h1, h2, h3 { margin: 0; }
+    .navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 50px; background-color: #fff; border-bottom: 1px solid #ddd; position: sticky; top: 0; z-index: 1000; }
+    .navbar .logo h1 { font-size: 22px; color: #1ea5c6; }
+    .navbar .nav-links { list-style: none; display: flex; gap: 20px; margin: 0; padding: 0; }
+    .navbar .nav-links li a { text-decoration: none; color: #555; font-weight: bold; }
+    .navbar .nav-links li a.active, .navbar .nav-links li a:hover { color: #1ea5c6; }
+    .hero { text-align: center; padding: 50px 20px; background-color: #f4f8f9; }
+    .hero h2 { font-size: 30px; color: #1ea5c6; }
+    .hero p { max-width: 700px; margin: 10px auto 20px; line-height: 1.5; }
+    .logo-main { width: 280px; margin-top: 20px; }
+    .section-flex { display: flex; justify-content: space-between; align-items: center; gap: 40px; padding: 60px 10%; flex-wrap: wrap; }
+    .section-flex:nth-child(even) { background-color: #f4f8f9; }
+    .section-flex .texto { flex: 1 1 45%; }
+    .section-flex .texto h2, .section-flex .texto h3 { color: #1ea5c6; margin-bottom: 15px; }
+    .section-flex .texto p { line-height: 1.6; }
+    .section-flex .imagen { flex: 1 1 45%; }
+    .section-flex .imagen img { max-width: 100%; border-radius: 8px; }
+    .servicios { padding: 60px 10%; background-color: #fff; }
+    .servicios h2 { text-align: center; font-size: 26px; color: #1ea5c6; margin-bottom: 20px; }
+    .servicios p { text-align: center; max-width: 800px; margin: 0 auto 40px; line-height: 1.5; }
+    .servicios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+    .servicio { background-color: #f4f8f9; padding: 20px; border-radius: 8px; transition: transform 0.3s; }
+    .servicio:hover { transform: translateY(-5px); }
+    .servicio h3 { color: #1ea5c6; margin-bottom: 10px; }
+    .testimonio { background-color: #a7d8e8; color: #fff; padding: 40px 20px; text-align: center; font-size: 18px; line-height: 1.6; font-style: italic; }
+    .testimonio span { display: block; margin-top: 15px; font-weight: bold; font-style: normal; }
+    #contacto { padding: 60px 10%; background-color: #f4f8f9; }
+    #contacto h2 { color: #1ea5c6; margin-bottom: 15px; }
+    .contacto-flex { display: flex; flex-wrap: wrap; gap: 40px; }
+    .formulario { flex: 1 1 45%; }
+    .formulario label { display: block; margin-top: 10px; font-weight: bold; }
+    .formulario input, .formulario textarea { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 5px; }
+    .formulario button { margin-top: 15px; background-color: #1ea5c6; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; }
+    .formulario button:hover { background-color: #188aa6; }
+    .mapa { flex: 1 1 45%; }
+    iframe { width: 100%; height: 300px; border: none; border-radius: 8px; }
+    footer { background: #fff; text-align: center; padding: 20px; font-size: 14px; border-top: 1px solid #ddd; color: #555; }
   </style>
 </head>
 <body>
-  <nav>
-    <a href="#inicio">Inicio</a>
-    <a href="#nosotros">Nosotros</a>
-    <a href="#servicios">Servicios</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
-
-  <header id="inicio">
-    <div class="overlay"></div>
-    <h1>Automar Solutions</h1>
-    <p>Automatización, mantenimiento industrial y naval con innovación y confianza</p>
-    <a href="#contacto" style="background:#023e8a;color:#fff;padding:10px 20px;text-decoration:none;border-radius:5px;">Contáctanos</a>
+  <header>
+    <nav class="navbar">
+      <div class="logo"><h1>Automar solutions</h1></div>
+      <ul class="nav-links">
+        <li><a href="#inicio" class="active">INICIO</a></li>
+        <li><a href="#nosotros">SOBRE NOSOTROS</a></li>
+        <li><a href="#servicios">SERVICIOS Y PRODUCTOS</a></li>
+        <li><a href="#contacto">CONTACTO</a></li>
+      </ul>
+    </nav>
   </header>
-
-  <section id="nosotros">
-    <h2>Sobre Nosotros</h2>
-    <p>En Automar Solutions ofrecemos soluciones de automatización, mantenimiento industrial y naval con un enfoque innovador, eficiente y seguro. Nuestro compromiso es mantener la productividad y seguridad de tu operación.</p>
+  <section id="inicio" class="hero">
+    <h2>Bienvenido a Automar Solutions</h2>
+    <p>Tu aliado estratégico en automatización y mantenimiento industrial y naval. Confiabilidad, experiencia y compromiso al servicio de tu empresa.</p>
+    <img src="img/logo.png" alt="Logo Automar Solutions" class="logo-main">
   </section>
-
-  <section id="servicios">
-    <h2>Servicios</h2>
-    <ul>
-      <li>Automatización de procesos</li>
-      <li>Mantenimiento preventivo y correctivo</li>
-      <li>Servicios especializados en sector naval</li>
-      <li>Asesoría y soluciones tecnológicas</li>
-    </ul>
+  <section id="nosotros" class="section-flex">
+    <div class="texto">
+      <h2>Sobre nosotros</h2>
+      <p>Automar Solutions es una empresa mexicana creada por ingenieros altamente capacitados, apasionados por la excelencia...</p>
+    </div>
+    <div class="imagen"><img src="img/nosotros1.jpg" alt="Ingenieros trabajando"></div>
   </section>
-
+  <section class="section-flex">
+    <div class="texto">
+      <h2>¿Por qué elegirnos?</h2>
+      <p>En Automar Solutions, somos conscientes de que la seguridad va primero...</p>
+    </div>
+    <div class="imagen"><img src="img/nosotros2.jpg" alt="Equipo de trabajo en obra"></div>
+  </section>
+  <section id="servicios" class="servicios">
+    <h2>Servicios y Productos de Automar Solutions</h2>
+    <p>Descubre la excelencia en automatización y mantenimiento industrial y marítimo.</p>
+    <div class="servicios-grid">
+      <div class="servicio"><h3>Mantenimiento Industrial Integral</h3><p>Ofrecemos un servicio completo de mantenimiento industrial...</p></div>
+      <div class="servicio"><h3>Automatización de Procesos Avanzada</h3><p>Diseñamos, implementamos y optimizamos sistemas...</p></div>
+      <div class="servicio"><h3>Mantenimiento Marítimo Especializado</h3><p>Proporcionamos mantenimiento preventivo y correctivo...</p></div>
+    </div>
+  </section>
+  <section class="testimonio">
+    "Con Automar Solutions, su empresa gana eficiencia y productividad..." <span>- Equipo Automar Solutions</span>
+  </section>
   <section id="contacto">
-    <h2>Contacto</h2>
-    <p><strong>Teléfono:</strong> 833-536-86-60</p>
-    <p><strong>Correo:</strong> Automarsolutions@gmail.com</p>
+    <h2>Contáctanos</h2>
+    <div class="contacto-flex">
+      <div class="formulario">
+        <p>¿Necesitas algún servicio o cotización?<br>Comunícate con nosotros al <b>833-536-86-60</b> o al correo: <b>Automarsolutions@gmail.com</b></p>
+        <form>
+          <label for="nombre">Nombre *</label>
+          <input type="text" id="nombre" required>
+          <label for="correo">Dirección de correo electrónico *</label>
+          <input type="email" id="correo" required>
+          <label for="mensaje">Mensaje *</label>
+          <textarea id="mensaje" rows="5" required></textarea>
+          <button type="submit">Enviar formulario</button>
+        </form>
+      </div>
+      <div class="mapa">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
   </section>
-
-  <footer>
-    <p>&copy; 2025 Automar Solutions. Todos los derechos reservados.</p>
-  </footer>
+  <footer>© 2025 Automar Solutions - Todos los derechos reservados</footer>
 </body>
 </html>
